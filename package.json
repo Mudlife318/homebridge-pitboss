@@ -29,19 +29,16 @@
     "multicast-dns": "^7.2.5"
   },
   "devDependencies": {
-    "@types/node": "^20.19.39",
-    "homebridge": "^1.11.4",
-    "typescript": "^5.9.3"
-  },
-  "peerDependencies": {
-    "homebridge": "^1.6.0"
+    "@types/node": "^20.0.0",
+    "homebridge": "^1.8.0",
+    "typescript": "^5.0.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mudlife318/homebridge-pitboss.git"
   },
   "bugs": {
-    "url": "https://github.com/mudlife318/homebridge-pitboss/issues"
+    "url": "https://github.com/Mudlife318/homebridge-pitboss/issues"
   },
-  "homepage": "https://github.com/mudlife318/homebridge-pitboss#readme"
+  "homepage": "https://github.com/Mudlife318/homebridge-pitboss#readme"
 }
