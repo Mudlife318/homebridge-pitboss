@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NETWORK_SCAN_CONCURRENCY = exports.NETWORK_SCAN_TIMEOUT_MS = exports.MDNS_DISCOVERY_TIMEOUT_MS = exports.PROBE_UNPLUGGED_SENTINEL = exports.DEFAULT_TARGET_TEMP_F = exports.GRILL_MAX_TEMP_F = exports.GRILL_MIN_TEMP_F = exports.DEFAULT_REQUEST_TIMEOUT_MS = exports.DEFAULT_SLEEP_TIMEOUT_MS = exports.DEFAULT_SLEEP_INTERVAL_MS = exports.DEFAULT_POLL_INTERVAL_MS = exports.PLATFORM_NAME = exports.PLUGIN_NAME = void 0;
+exports.PLUGIN_NAME = 'homebridge-pitboss';
+exports.PLATFORM_NAME = 'PitBoss';
+exports.DEFAULT_POLL_INTERVAL_MS = 5000;
+exports.DEFAULT_SLEEP_INTERVAL_MS = 60000;
+exports.DEFAULT_SLEEP_TIMEOUT_MS = 0;
+exports.DEFAULT_REQUEST_TIMEOUT_MS = 8000;
+exports.GRILL_MIN_TEMP_F = 130;
+exports.GRILL_MAX_TEMP_F = 420;
+exports.DEFAULT_TARGET_TEMP_F = 225;
+exports.PROBE_UNPLUGGED_SENTINEL = 900;
+exports.MDNS_DISCOVERY_TIMEOUT_MS = 10000;
+exports.NETWORK_SCAN_TIMEOUT_MS = 1500;
+exports.NETWORK_SCAN_CONCURRENCY = 20;
+//# sourceMappingURL=settings.js.map
