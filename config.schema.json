@@ -1,0 +1,118 @@
+{
+  "pluginAlias": "PitBoss",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "Connects to your Pit Boss pellet smoker directly over your local WiFi network. No cloud account, no Python, no Bluetooth required. The grill must be connected to your WiFi via the SmokeIT app before using this plugin.",
+  "footerDisplay": "For help and documentation visit the [GitHub repo](https://github.com/mudlife318/homebridge-pitboss).",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Accessory Name",
+        "type": "string",
+        "default": "Pit Boss Smoker",
+        "description": "Name shown in the Home app."
+      },
+      "grillIp": {
+        "title": "Grill IP Address",
+        "type": "string",
+        "format": "ipv4",
+        "placeholder": "e.g. 192.168.1.50",
+        "description": "Local IP address of your grill. If set, skips automatic discovery. Recommended — assign a static IP to your grill in your router settings."
+      },
+      "autoDiscover": {
+        "title": "Automatic Discovery",
+        "type": "boolean",
+        "default": true,
+        "description": "Automatically find the grill on your network using mDNS and network scanning. Only used if Grill IP Address is not set."
+      },
+      "deviceId": {
+        "title": "Device ID (optional)",
+        "type": "string",
+        "placeholder": "e.g. PBL-30C922A57F70",
+        "description": "Optional. Speeds up discovery by matching a specific grill. Find it by opening http://<grill-ip>/conf9.json in a browser and looking for the device.id field."
+      },
+      "pollInterval": {
+        "title": "Active Poll Interval (ms)",
+        "type": "integer",
+        "default": 5000,
+        "minimum": 2000,
+        "maximum": 30000,
+        "description": "How often to fetch grill state while the grill is ON. Default: 5000ms (5 seconds)."
+      },
+      "sleepInterval": {
+        "title": "Sleep Poll Interval (ms)",
+        "type": "integer",
+        "default": 60000,
+        "minimum": 10000,
+        "maximum": 300000,
+        "description": "How often to check grill state while it is OFF (sleep mode). Default: 60000ms (1 minute). Reduces network traffic between cooks."
+      },
+      "sleepTimeout": {
+        "title": "Sleep Mode Delay (ms)",
+        "type": "integer",
+        "default": 0,
+        "minimum": 0,
+        "maximum": 60000,
+        "description": "How long to wait after the grill turns off before entering sleep mode. Helps avoid flickering if your grill briefly drops connection. Default: 0 (immediate)."
+      },
+      "grillModel": {
+        "title": "Grill Model",
+        "type": "string",
+        "default": "PBV4PS2",
+        "description": "Your Pit Boss model. Currently only PBV4PS2 is supported."
+      },
+      "grillPassword": {
+        "title": "Grill Password",
+        "type": "string",
+        "description": "Grill password if you set one in the SmokeIT app. Leave blank if you never set a password (most users)."
+      },
+      "requestTimeout": {
+        "title": "Request Timeout (ms)",
+        "type": "integer",
+        "default": 8000,
+        "minimum": 2000,
+        "maximum": 30000,
+        "description": "HTTP request timeout when talking to the grill. Increase if you have a slow WiFi connection. Default: 8000ms."
+      }
+    },
+    "required": ["name"]
+  },
+  "form": [
+    {
+      "type": "fieldset",
+      "title": "Basic",
+      "items": ["name"]
+    },
+    {
+      "type": "fieldset",
+      "title": "Connection",
+      "expandable": false,
+      "items": [
+        {
+          "key": "grillIp",
+          "placeholder": "Leave blank to auto-discover"
+        },
+        "autoDiscover",
+        {
+          "key": "deviceId",
+          "placeholder": "Optional — only needed if you have multiple Pit Boss grills"
+        }
+      ]
+    },
+    {
+      "type": "fieldset",
+      "title": "Sleep Mode",
+      "expandable": true,
+      "expanded": false,
+      "items": ["pollInterval", "sleepInterval", "sleepTimeout"]
+    },
+    {
+      "type": "fieldset",
+      "title": "Advanced",
+      "expandable": true,
+      "expanded": false,
+      "items": ["grillModel", "grillPassword", "requestTimeout"]
+    }
+  ]
+}

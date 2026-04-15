@@ -1,0 +1,47 @@
+{
+  "name": "homebridge-pitboss",
+  "version": "1.0.0",
+  "description": "Homebridge plugin for Pit Boss pellet smokers via local WiFi — no cloud, no Python, no Bluetooth required",
+  "license": "Apache-2.0",
+  "author": "mudlife318",
+  "keywords": [
+    "homebridge-plugin",
+    "pitboss",
+    "pit-boss",
+    "smoker",
+    "grill",
+    "bbq",
+    "pellet",
+    "homekit",
+    "wifi"
+  ],
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=18.0.0",
+    "homebridge": ">=1.6.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "multicast-dns": "^7.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.39",
+    "homebridge": "^1.11.4",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "homebridge": "^1.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mudlife318/homebridge-pitboss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mudlife318/homebridge-pitboss/issues"
+  },
+  "homepage": "https://github.com/mudlife318/homebridge-pitboss#readme"
+}
