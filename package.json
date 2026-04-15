@@ -1,6 +1,6 @@
 {
   "name": "homebridge-pitboss",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Homebridge plugin for Pit Boss pellet smokers via local WiFi — no cloud, no Python, no Bluetooth required",
   "license": "Apache-2.0",
   "author": "mudlife318",
